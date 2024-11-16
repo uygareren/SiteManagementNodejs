@@ -1,0 +1,659 @@
+{
+	"info": {
+		"_postman_id": "438db57f-65de-4cee-a88d-cb132f85009a",
+		"name": "Site Management - Codeigniter/Nodejs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26765569",
+		"_collection_link": "https://cyclemate.postman.co/workspace/Vallet---Test-Case~5d001910-2c06-4f6b-828a-945992fca121/collection/26765569-438db57f-65de-4cee-a88d-cb132f85009a?action=share&source=collection_link&creator=26765569"
+	},
+	"item": [
+		{
+			"name": "Site CRUD",
+			"item": [
+				{
+					"name": "Get Sites",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/site-management/sites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"site-management",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Site By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/site-management/site/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"site-management",
+								"site",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Site",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_name\": \"New Site 2\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/site-management/sites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"site-management",
+								"sites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Site",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"site_name\": \"New Site 3\",\r\n    \"type\": \"site\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:80/site-management/sites/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"site-management",
+								"sites",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Site",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:80/site-management/site/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "80",
+							"path": [
+								"site-management",
+								"site",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blocks CRUD",
+			"item": [
+				{
+					"name": "Get Blocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/blocks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Block By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/block/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"block",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Block By Site ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/blocks/site/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"blocks",
+								"site",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Block",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"site_id\": 1,\r\n  \"block_name\": \"F\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/blocks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"blocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Block",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"site_id\": 2,\r\n  \"block_name\": \"FFF\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/blocks/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"blocks",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Block",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/block/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"block",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flat CRUD",
+			"item": [
+				{
+					"name": "Get All Flats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/flats",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flat By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/flat/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flat",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flat By Block ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/flat/block/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flat",
+								"block",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Flat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"block_id\": 1,\r\n  \"flat_no\": \"A159\",\r\n  \"room_number\": 3\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/flat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flat"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Flat",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"block_id\": 1,\r\n    \"flat_no\": \"A102\",\r\n    \"room_number\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/flat/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flat",
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flat Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/flats/filter?start_date=2024-01-01&end_date=2024-12-31&min_rooms=3&max_rooms=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flats",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2024-01-01"
+								},
+								{
+									"key": "end_date",
+									"value": "2024-12-31"
+								},
+								{
+									"key": "min_rooms",
+									"value": "3"
+								},
+								{
+									"key": "max_rooms",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Flat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/flat/21",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"flat",
+								"21"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin APIs",
+			"item": [
+				{
+					"name": "Add Debt For User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"admin_id\": 1,\r\n    \"user_id\": 9,\r\n    \"amount\": 4500,\r\n    \"deadline\": \"2024-12-31 15:30:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/admin/assign-debt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"admin",
+								"assign-debt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post Add Apartment For User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"admin_id\": 1,\r\n    \"user_id\": 17,\r\n    \"flat_id\":17\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/admin/add-apartment",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"admin",
+								"add-apartment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User APIs",
+			"item": [
+				{
+					"name": "Post Pay Debt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 9,\r\n    \"admin_id\": 1,\r\n    \"amount\": 100\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/user/pay-debt",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"user",
+								"pay-debt"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Paid Debts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"viewed_user_id\": 9,\r\n    \"user_id\": 9\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/user/paid-debts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"user",
+								"paid-debts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users By Filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/site-management/user/users-by-filters?minAge=25&maxAge=40&startDate=2023-01-01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"user",
+								"users-by-filters"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "25"
+								},
+								{
+									"key": "maxAge",
+									"value": "40"
+								},
+								{
+									"key": "startDate",
+									"value": "2023-01-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-01-01",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Debts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"viewed_user_id\": 9,\r\n    \"user_id\": 9\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/site-management/user/debts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"site-management",
+								"user",
+								"debts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
