@@ -27,9 +27,8 @@ class SiteModel {
             const pool = await sql.connect(db);
             const result = await pool.request()
                 .input('site_name', sql.NVarChar, data.site_name)
-                .input('type', sql.NVarChar, data.type)
                 .input('created_at', sql.DateTime, new Date())
-                .query('INSERT INTO site (site_name, type, created_at) VALUES (@site_name, @type, @created_at)');
+                .query('INSERT INTO site (site_name, created_at) VALUES (@site_name, @created_at)');
             return result.rowsAffected > 0;
         } catch (error) {
             throw error;
@@ -42,9 +41,8 @@ class SiteModel {
             const result = await pool.request()
                 .input('id', sql.Int, id)
                 .input('site_name', sql.NVarChar, data.site_name)
-                .input('type', sql.NVarChar, data.type)
                 .input('updated_at', sql.DateTime, new Date())
-                .query('UPDATE site SET site_name = @site_name, type = @type, updated_at = @updated_at WHERE id = @id');
+                .query('UPDATE site SET site_name = @site_name, updated_at = @updated_at WHERE id = @id');
             return result.rowsAffected > 0;
         } catch (error) {
             throw error;

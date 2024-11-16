@@ -2,7 +2,6 @@ const BlockModel = require("../model/BlockModel");
 const SiteModel = require("../model/SiteModel");
 
 class SiteController {
-    // Get all sites
     static async getSites(req, res) {
         try {
             const sites = await SiteModel.getSites();
@@ -10,7 +9,7 @@ class SiteController {
                 const blocks = await BlockModel.getBlockBySiteId(site.id); // BlockModel'ı oluşturun
                 const blockCount = blocks.length;
 
-                if (blockCount === 1) {
+                if (blockCount <= 1) {
                     site.type = 'Apartment';
                 } else if (blockCount > 1) {
                     site.type = 'Site';
@@ -30,7 +29,6 @@ class SiteController {
         }
     }
 
-    // Get a single site by ID
     static async getSiteById(req, res) {
         const { id } = req.params;
         try {
@@ -39,10 +37,10 @@ class SiteController {
                 return res.status(404).json({ status: 404, message: 'Site not found' });
             }
 
-            const blocks = await BlockModel.getBlockBySiteId(id); // BlockModel'ı oluşturun
+            const blocks = await BlockModel.getBlockBySiteId(id); 
             const blockCount = blocks.length;
 
-            if (blockCount === 1) {
+            if (blockCount <= 1) {
                 site.type = 'Apartment';
             } else if (blockCount > 1) {
                 site.type = 'Site';
@@ -60,10 +58,9 @@ class SiteController {
         }
     }
 
-    // Create a new site
     static async postSite(req, res) {
         const data = req.body;
-        if (!data.site_name || !data.type) {
+        if (!data.site_name) {
             return res.status(400).json({ status: 400, message: 'Site name and type are required.' });
         }
 
@@ -83,11 +80,10 @@ class SiteController {
         }
     }
 
-    // Update a site
     static async updateSite(req, res) {
         const { id } = req.params;
         const data = req.body;
-        if (!data.site_name || !data.type) {
+        if (!data.site_name) {
             return res.status(400).json({ status: 400, message: 'Site name and type are required.' });
         }
 
@@ -97,7 +93,7 @@ class SiteController {
                 return res.status(404).json({ status: 404, message: 'Site with the specified ID not found.' });
             }
 
-            data.updated_at = new Date(); // Güncelleme zamanı
+            data.updated_at = new Date();
 
             const success = await SiteModel.updateSite(id, data);
             if (success) {
